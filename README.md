@@ -1,7 +1,7 @@
 ### Oi! Eu sou o Breno Vasconcelos
 
 - 🌱 Estudando desenvolvimento web
-- 😄 Pronouns:ele/dele
+- 😄 Pronouns: ele/dele
 
 <div align="center">
   <a href="https://github.com/BrenoVascon">
