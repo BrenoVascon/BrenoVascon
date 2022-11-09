@@ -1,6 +1,6 @@
 ### Oi! Eu sou o Breno Vasconcelos
 
-- 🌱 Estudando desenvolvimento web, futuro fullStack
+- 🌱 Estudando Front-end, futuro fullStack
 - 😄 Pronouns: ele/dele
 
 <div align="center">
