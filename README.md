@@ -3,7 +3,7 @@
 - 🌱 Estudando Front-end, futuro fullStack
 - 😄 Pronouns: ele/dele
 
-![Breno GitHub stats](![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Breno&show_icons=true&bg_color=00000000))
+(![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Breno&show_icons=true&bg_color=00000000))
 ## Tecnologias que eu uso no meu dia
 
 
