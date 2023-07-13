@@ -13,9 +13,12 @@
      <br>
    </ul>
 
-   <br><br><br>
+ 
+   </div>
+    </div>
+  
 <div align="center">
-
+ <br><br><br>
   <h1>⚡ MY TECHNOLOGIES ⚡</h1>
   <p>
     <img height="30" width="40" alt="js-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
