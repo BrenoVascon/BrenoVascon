@@ -1,7 +1,7 @@
-<img src="anime.cod" alt="anime" width="100%"  height="100%">
+<img src="anime.cod.gif" alt="anime" width="100%"  height="100%">
 <h1 align="center">Hello!!👋</h1>
 <br>
- <img align="right" src="PixelArtAnime" alt="anime" width="300" height="300"> <br>
+ <img align="right" src="PixelArtAnime.gif" alt="anime" width="300" height="300"> <br>
  <br>
    <ul>
      <li></li>
