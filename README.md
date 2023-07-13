@@ -1,22 +1,36 @@
-### Oi! Eu sou o Breno Vasconcelos
+<img src="anime.cod" alt="anime" width="100%"  height="100%">
+<h1 align="center">Hello!!👋</h1>
+<br>
+ <img align="right" src="PixelArtAnime" alt="anime" width="300" height="300"> <br>
+ <br>
+   <ul>
+     <li></li>
+     <br>
+     <li>Some of my projects are available at <a href="https://vercel.com/dashboard">My Portfólio</li>
+     <br>
+     <li>📫 How to reach me beniolimavasc@gmail.com</li>
+     <br>
+   </ul>
 
-- 🌱 Estudando Front-end
-  
-- 😄 Pronouns: ele/dele
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Breno&show_icons=true&bg_color=00000000)
-## Tecnologias que eu uso no meu dia
-
-
-<div style="display: inline_block" >
-  <img align="center" alt="html5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img align="center" alt="css" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img align="center" alt="js" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img align="center" alt="react" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+<div >
+   <br><br><br>
+  <h1>⚡ MY TECHNOLOGIES ⚡</h1>
+  <p>
+    <img height="30" width="40" alt="js-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+    <img height="30" width="40" alt="react-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+    <img height="30" width="40" alt="html-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+    <img height="30" width="40" alt="css-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+    
+  </p>
 </div><br/>
-## Contatos
- <div> 
-  <a href = "mailto:beniolimavasc@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<h1>Contatos</h1>
+ <a href = "mailto:beniolimavasc@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
   <a href="https://www.linkedin.com/in/bienolima19/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a></div><br/>
 
-Apaixonado por tecnologia e seus segmentos.
+
+ <div>
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Breno&show_icons=true&bg_color=00000000)
+## Tecnologias que eu uso no meu dia
+ 
+
