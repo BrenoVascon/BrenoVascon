@@ -4,7 +4,8 @@
  <img align="right" src="PixelArtAnime.gif" alt="anime" width="300" height="300"> <br>
  <br>
    <ul>
-     <li></li>
+     <li>🌱 I’m currently learning JavaScript and React
+</li>
      <br>
      <li>Some of my projects are available at <a href="https://vercel.com/dashboard">My Portfólio</li>
      <br>
@@ -12,9 +13,9 @@
      <br>
    </ul>
 
-
-<div align="center">
    <br><br><br>
+<div align="center">
+
   <h1>⚡ MY TECHNOLOGIES ⚡</h1>
   <p>
     <img height="30" width="40" alt="js-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
