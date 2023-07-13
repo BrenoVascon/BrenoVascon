@@ -19,7 +19,7 @@
   
 <div align="center">
  <br><br><br>
-  <h1>⚡ MY TECHNOLOGIES ⚡</h1>
+  <h1> Languages and Tools:</h1>
   <p>
     <img height="30" width="40" alt="js-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
     <img height="30" width="40" alt="react-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
