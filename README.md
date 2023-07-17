@@ -4,6 +4,7 @@
  <img align="right" src="PixelArtAnime.gif" alt="anime" width="300" height="300"> <br>
  <br>
    <ul>
+    <br>
      <li>🌱 I’m currently learning JavaScript and React
 </li>
      <br>
