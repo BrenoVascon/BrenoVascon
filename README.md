@@ -8,7 +8,7 @@
      <li>🌱 I’m currently learning JavaScript, Typescript, React and Redux.
 </li>
      <br>
-     <li>Some of my projects are available at <a href="https://vercel.com/dashboard">My Portfólio</li>
+     <li>Feel free to check out my repositories!</li>
      <br>
      <li>📫 How to reach me beniolimavasc@gmail.com</li>
      <br>
