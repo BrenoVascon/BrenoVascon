@@ -5,7 +5,7 @@
  <br>
    <ul>
     <br>
-     <li>🌱 I’m currently learning JavaScript, Typescript, React and Redux.
+     <li>🌱 I'm currently learning web development, I have knowledge in React, JS, TypeScript, PHP, MYSQL and I continue studying to improve myself
 </li>
      <br>
      <li>Feel free to check out my repositories!</li>
