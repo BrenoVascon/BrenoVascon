@@ -5,7 +5,9 @@
  <br>
    <ul>
     <br>
-     <li>🌱 I'm currently learning web development, I have knowledge in React, JS, TypeScript, PHP, MYSQL and I continue studying to improve myself
+     <li>Front-end Developer specialized in Shopify, working on the development, customization, and maintenance of Shopify stores, both for new projects and existing live stores. I work with themes, integrations, apps, and Shopify Functions, as well as performance optimizations, always prioritizing user experience, responsiveness, and development best practices.
+
+I have experience with Shopify (Liquid, APIs, and platform architecture), along with modern technologies such as React.js, TypeScript, JavaScript, and Node.js, applied both in the interface layer and in integrations and automations. I use Git/GitHub for version control and team collaboration, contributing to consistent and scalable deliveries in agile environments.
 </li>
      <br>
      <li>Feel free to check out my repositories!</li>
@@ -20,7 +22,7 @@
   
 <div align="center">
  <br><br><br>
-  <h1> Languages and Tools:</h1>
+  <h1>Languages and Tools:</h1>
   <p>
     <img height="31" width="35" alt="typescript-icon" src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png">
     <img height="30" width="30" alt="js-icon" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png">
@@ -28,7 +30,11 @@
     <img height="30" width="40" alt="html-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
     <img height="30" width="40" alt="css-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
     <img height="30" width="35" alt="c#-icon" src="https://user-images.githubusercontent.com/25181517/121405384-444d7300-c95d-11eb-959f-913020d3bf90.png"> 
-  </div>
+    <img height="30" width="40" alt="shopify-icon" src="https://img.icons8.com/?size=100&id=uSHYbs6PJfMT&format=png&color=000000">
+    <img height="30" width="40" alt="nodejs-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg">
+    <img height="30" width="40" alt="git-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg">
+    <img height="30" width="40" alt="graphql-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/graphql/graphql-plain.svg">
+
   </p>
 </div><br/>
 <h1>Contatos</h1>
