@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="908" height="236" viewBox="0 0 908 236"><style>
+.p{animation:p 1.6s ease-in-out infinite}@keyframes p{0%,100%{opacity:.35}50%{opacity:1}}
+.t{font:700 16px 'DejaVu Sans Mono',Consolas,'Courier New',monospace;fill:#f4cc70;letter-spacing:5px}.m{font:600 14px 'DejaVu Sans Mono',Consolas,'Courier New',monospace;fill:#d9d4ff}.s{font:600 11px 'DejaVu Sans Mono',Consolas,'Courier New',monospace;fill:#8a82b8;letter-spacing:3px}</style>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0c20"/><stop offset=".6" stop-color="#171238"/><stop offset="1" stop-color="#24163f"/></linearGradient></defs>
+<rect width="908" height="236" rx="18" fill="url(#bg)" stroke="#3b2f6b" stroke-width="2"/>
+<text class="t" x="28" y="40">✦ ARCANE STATS</text>
+<text class="m p" x="454" y="124" text-anchor="middle">summoning stats...</text>
+<text class="s" x="454" y="152" text-anchor="middle">RUN THE "ARCANE STATS" WORKFLOW IN THE ACTIONS TAB</text></svg>
