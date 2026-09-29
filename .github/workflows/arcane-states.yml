@@ -1,4 +1,4 @@
-name: Arcane Stats
+name: Arcane States
 
 on:
   schedule:
@@ -19,8 +19,12 @@ jobs:
 
       - name: Summon arcane stats
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Com o secret ARCANE_TOKEN (seu token pessoal) inclui repos privados.
+          # Sem ele, usa o token automático e mostra só dados públicos.
+          GITHUB_TOKEN: ${{ secrets.ARCANE_TOKEN || secrets.GITHUB_TOKEN }}
           GH_USER: ${{ github.repository_owner }}
+          INCLUDE_ORG_REPOS: "true"   # "false" = só repos seus (ignora os de organizações)
+          EXCLUDE_LANGS: ""           # ex.: "HTML,SCSS" para esconder linguagens
         run: |
           python3 - <<'PY'
           import json, math, os, random, sys, urllib.request, urllib.parse
@@ -30,40 +34,94 @@ jobs:
           OUT = os.environ.get("OUT", "assets/arcane-stats.svg")
           MONO = "'DejaVu Sans Mono',Consolas,'Courier New',monospace"
 
-          def api(path):
-              req = urllib.request.Request("https://api.github.com" + path, headers={
+          INCLUDE_ORGS = os.environ.get("INCLUDE_ORG_REPOS", "true").lower() == "true"
+          EXCLUDE = {x.strip().lower() for x in os.environ.get("EXCLUDE_LANGS", "").split(",") if x.strip()}
+
+          def _req(url, data=None):
+              req = urllib.request.Request(url if url.startswith("http") else "https://api.github.com" + url, data=data, headers={
                   "Accept": "application/vnd.github+json", "User-Agent": "arcane-stats"})
               if TOKEN:
                   req.add_header("Authorization", "Bearer " + TOKEN)
+              if data:
+                  req.add_header("Content-Type", "application/json")
               with urllib.request.urlopen(req, timeout=30) as r:
                   return json.load(r)
+
+          def api(path):
+              return _req(path)
+
+          def gql(query, variables):
+              res = _req("/graphql", json.dumps({"query": query, "variables": variables}).encode())
+              if res.get("errors"):
+                  raise RuntimeError(res["errors"])
+              return res["data"]
 
           def count(q):
               return api("/search/" + q + "&per_page=1")["total_count"]
 
+          CONTRIB_Q = """query($login:String!,$from:DateTime!,$to:DateTime!){user(login:$login){contributionsCollection(from:$from,to:$to){
+          totalCommitContributions totalPullRequestContributions totalIssueContributions totalPullRequestReviewContributions restrictedContributionsCount}}}"""
+
+          def contributions(u, created):
+              import datetime as dt
+              start = dt.datetime.fromisoformat(created.replace("Z", "+00:00"))
+              now = dt.datetime.now(dt.timezone.utc)
+              tot = dict(commits=0, prs=0, issues=0, reviews=0, private=0)
+              while start < now:
+                  end = min(start + dt.timedelta(days=365), now)
+                  c = gql(CONTRIB_Q, {"login": u, "from": start.isoformat(), "to": end.isoformat()})["user"]["contributionsCollection"]
+                  tot["commits"] += c["totalCommitContributions"]
+                  tot["prs"] += c["totalPullRequestContributions"]
+                  tot["issues"] += c["totalIssueContributions"]
+                  tot["reviews"] += c["totalPullRequestReviewContributions"]
+                  tot["private"] += c["restrictedContributionsCount"]
+                  start = end
+              return tot
+
           def gather(u):
               user = api(f"/users/{u}")
+              me = None
+              try:
+                  me = api("/user")
+              except Exception:
+                  pass
+              private = bool(me) and me.get("login", "").lower() == u.lower()
+              if private:
+                  aff = "owner,collaborator,organization_member" if INCLUDE_ORGS else "owner"
+                  base = f"/user/repos?per_page=100&visibility=all&affiliation={aff}&sort=pushed"
+              else:
+                  base = f"/users/{u}/repos?per_page=100&type=owner&sort=pushed"
               repos, page = [], 1
               while page <= 5:
-                  batch = api(f"/users/{u}/repos?per_page=100&type=owner&sort=pushed&page={page}")
+                  batch = api(f"{base}&page={page}")
                   repos += batch
                   if len(batch) < 100:
                       break
                   page += 1
               own = [r for r in repos if not r["fork"]]
               langs = {}
-              for r in own[:40]:
-                  for k, v in api(f"/repos/{u}/{r['name']}/languages").items():
-                      langs[k] = langs.get(k, 0) + v
-              q = urllib.parse.quote
+              for r in own[:80 if private else 40]:
+                  try:
+                      for k, v in api(r["languages_url"]).items():
+                          if k.lower() not in EXCLUDE:
+                              langs[k] = langs.get(k, 0) + v
+                  except Exception:
+                      pass
+              try:
+                  c = contributions(u, user["created_at"])
+                  commits, prs, issues = c["commits"] + c["private"], c["prs"], c["issues"]
+              except Exception as e:
+                  print("GraphQL indisponível, usando busca pública:", e)
+                  q = urllib.parse.quote
+                  commits = count("commits?q=" + q(f"author:{u}"))
+                  prs = count("issues?q=" + q(f"author:{u} type:pr"))
+                  issues = count("issues?q=" + q(f"author:{u} type:issue"))
               return dict(
-                  stars=sum(r["stargazers_count"] for r in own),
-                  commits=count("commits?q=" + q(f"author:{u}")),
-                  prs=count("issues?q=" + q(f"author:{u} type:pr")),
-                  issues=count("issues?q=" + q(f"author:{u} type:issue")),
-                  repos=user["public_repos"],
+                  stars=sum(r["stargazers_count"] for r in own if r["owner"]["login"].lower() == u.lower()),
+                  commits=commits, prs=prs, issues=issues,
+                  repos=user["public_repos"] + ((me or {}).get("owned_private_repos", 0) if private else 0),
                   followers=user["followers"],
-                  langs=langs,
+                  langs=langs, private=private,
               )
 
           LANG_COLORS = {"Liquid": "#67b8de", "TypeScript": "#3178c6", "JavaScript": "#f1e05a", "CSS": "#8b5cf6",
@@ -94,6 +152,8 @@ jobs:
                   x, y = rnd.uniform(8, W - 8), rnd.uniform(8, H - 8)
                   el.append(f'<rect class="tw" style="animation-delay:{-rnd.uniform(0,3):.2f}s" x="{x:.0f}" y="{y:.0f}" width="2" height="2" fill="#d9d4ff"/>')
               el.append(f'<text class="ttl" x="28" y="40">✦ ARCANE STATS</text>')
+              if d.get("private"):
+                  el.append(f'<text class="sm" x="30" y="62">PUBLIC + PRIVATE REALMS</text>')
               # nível + XP
               el.append(f'<text class="lv" x="{W-28}" y="40" text-anchor="end">LV {lv} · {title_for(lv)}</text>')
               el.append(f'<rect x="{W-268}" y="50" width="240" height="8" rx="4" fill="#1c1642" stroke="#3b2f6b"/>')
@@ -141,7 +201,7 @@ jobs:
               data = gather(USER)
               os.makedirs(os.path.dirname(OUT) or ".", exist_ok=True)
               open(OUT, "w", encoding="utf-8").write(render(data))
-              print("arcane stats atualizados para", USER, {k: v for k, v in data.items() if k != "langs"})
+              print("arcane stats atualizados para", USER, {k: v for k, v in data.items() if k != "langs"}, "linguagens:", len(data["langs"]))
           PY
 
       - name: Commit
