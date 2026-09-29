@@ -11,13 +11,15 @@
 
 ### 🧙‍♂️ About the Wizard
 
-<img align="right" width="440" src="./assets/wizard.gif" alt="Pixel art wizard casting a spell on a computer" />
+
 
 Front-end Developer specialized in **Shopify**, working on the development, customization, and maintenance of Shopify stores — both new projects and existing live stores. I work with **themes, integrations, apps, and Shopify Functions**, as well as performance optimizations, always prioritizing user experience, responsiveness, and development best practices.
 
 I have experience with Shopify (**Liquid, APIs, and platform architecture**), along with **React.js, TypeScript, JavaScript, and Node.js**, applied both in the interface layer and in integrations and automations. I use **Git/GitHub** for version control and team collaboration, contributing to consistent and scalable deliveries in agile environments.
 
 📜 Feel free to explore my repositories — each one is a page of the grimoire.
+
+<br> <img align="right" width="100%" src="./assets/wizard.gif" alt="Pixel art wizard casting a spell on a computer" />
 
 <br clear="right" />
 
