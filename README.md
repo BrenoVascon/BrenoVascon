@@ -45,7 +45,7 @@ I have experience with Shopify (**Liquid, APIs, and platform architecture**), al
 <h3 align="center">⚗️ Arcane Stats</h3>
 
 <p align="center">
-  <img src="./assets/arcane-states.svg" width="100%" alt="GitHub stats: stars, commits, pull requests, issues, repositories, followers and top languages" />
+  <img src="./assets/arcane-stats.svg" width="100%" alt="GitHub stats: stars, commits, pull requests, issues, repositories, followers and top languages" />
 </p>
 
 <img src="./assets/divider.svg" width="100%" />
